@@ -28,6 +28,7 @@ const wdm = webpackDevMiddleware(compiler, {
 app.use(wdm)
 app.use(webpackHotMiddleware(compiler))
 app.use(Static(path.join(__dirname, 'static')))
+app.use(Static(path.join(__dirname, 'js')))
 app.use(BodyParser())
 
 app.use(Users.routes()).use(Users.allowedMethods())
